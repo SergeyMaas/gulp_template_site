@@ -90,11 +90,13 @@ gulp.task('image:build', function () {
         .pipe(reload({stream: true}));
 });
 
+// перемещаем шрифты
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts))
 });
 
+// глобальный build
 gulp.task('build', [
     'html:build',
     'js:build',
@@ -107,26 +109,33 @@ gulp.task('webserver', function () {
     browserSync(config);
 });
 
+// чистим/удаляем build
 gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
 });
 
 gulp.task('watch', function(){
+    // смотрим изменения html
     watch([path.watch.html], function(event, cb) {
         gulp.start('html:build');
     });
+    // смотрим изменения sass
     watch([path.watch.style], function(event, cb) {
         gulp.start('style:build');
     });
+    // смотрим изменения js
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
     });
+    // смотрим изменения картинки
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
     });
+    // смотрим изменения шрифты
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
     });
 });
 
+// gulp по-умолчанию
 gulp.task('default', ['build', 'webserver', 'watch']);
