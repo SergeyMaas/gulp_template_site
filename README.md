@@ -22,6 +22,7 @@ var gulp        = require('gulp'),
 3. `gulp js:build`.
 4. `gulp image:build`.
 5. `gulp fonts:build`.
+5. `gulp clean`.
 
 ### Использование
 1. Клонируем и заходим в папку проекта.
