@@ -1,0 +1,19 @@
+{
+  "name": "default_site_template",
+  "version": "1.0.0",
+  "authors": [
+    "Maas"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize": "~1.0.4",
+    "jquery": "~2.1.4"
+  }
+}
