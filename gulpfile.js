@@ -90,12 +90,6 @@ gulp.task('image:build', function () {
         .pipe(reload({stream: true}));
 });
 
-// перемещаем шрифты
-gulp.task('fonts:build', function() {
-    gulp.src(path.src.fonts)
-        .pipe(gulp.dest(path.build.fonts))
-});
-
 // глобальный build
 gulp.task('build', [
     'html:build',
@@ -105,6 +99,13 @@ gulp.task('build', [
     'image:build'
 ]);
 
+// перемещаем шрифты
+gulp.task('fonts:build', function() {
+    gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts))
+});
+
+// запускаем сервер
 gulp.task('webserver', function () {
     browserSync(config);
 });
