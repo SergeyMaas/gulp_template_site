@@ -1,1 +1,2 @@
-# gulp_template_site
+# Default site template with Gulp
+***
